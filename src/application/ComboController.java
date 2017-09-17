@@ -32,7 +32,7 @@ public class ComboController implements Initializable{
 		   {
 			   System.out.println("1-B2B");
 			   FXMLLoader fxmlLoader = new FXMLLoader();
-		        fxmlLoader.setLocation(getClass().getResource("One2B_child.fxml"));
+		        fxmlLoader.setLocation(getClass().getResource("OneB2B_child.fxml"));
 		        /* 
 		         * if "fx:controller" is not set in fxml
 		         * fxmlLoader.setController(NewWindowController);
@@ -48,7 +48,7 @@ public class ComboController implements Initializable{
 		   {
 			   System.out.println("1-B2C Small");			   
 			   FXMLLoader fxmlLoader = new FXMLLoader();
-		        fxmlLoader.setLocation(getClass().getResource("OneBTwoC_child.fxml"));
+		        fxmlLoader.setLocation(getClass().getResource("OneB2C_small_child.fxml"));
 		        /* 
 		         * if "fx:controller" is not set in fxml
 		         * fxmlLoader.setController(NewWindowController);
