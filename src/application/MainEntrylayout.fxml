@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ComboController">
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <ComboBox fx:id="combo_box" onAction="#DropDownAction" prefWidth="300.0" promptText="Select  Option">
+            <items>
+     </items>
+               <VBox.margin>
+                  <Insets left="167.0" top="27.0" />
+               </VBox.margin>
+               
+               </ComboBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button mnemonicParsing="false" text="Print">
+                     <HBox.margin>
+                        <Insets left="167.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button id="main_OkButton_Id" mnemonicParsing="false" onAction="#PressOkButton" text="Ok">
+                     <HBox.margin>
+                        <Insets left="100.0" />
+                     </HBox.margin></Button>
+                  <Button mnemonicParsing="false" text="Cancel">
+                     <HBox.margin>
+                        <Insets left="100.0" right="50.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets top="45.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+   <top>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Desktop/mahabalipuram%20beach_1.jpg" />
+               </image>
+            </ImageView>
+            <TextArea prefHeight="67.0" prefWidth="600.0" text="Goods Calculated based on GST &#10;&amp; based on government policies&#10;" />
+            <TextArea prefHeight="150.0" prefWidth="670.0" text="Developed &amp; manufactured by Indian government&#10;Address  : Jasola &amp; Cannaught place&#10;Helpline no : 011-123456789&#10;" />
+         </children>
+      </HBox>
+   </top>
+   <bottom>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextArea prefHeight="150.0" prefWidth="670.0" text="Developed &amp; manufactured by Indian government&#10;Address  : Jasola &amp; Cannaught place&#10;Helpline no : 011-123456789&#10;" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Desktop/wifi_project.PNG" />
+               </image>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </ImageView>
+            <TextArea prefHeight="67.0" prefWidth="600.0" text="Authorized by MarkUp&#10;">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </TextArea>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>
