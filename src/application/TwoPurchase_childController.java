@@ -18,6 +18,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableColumn.CellEditEvent;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -26,44 +27,37 @@ import javafx.scene.control.cell.TextFieldTreeTableCell;
 
 public class TwoPurchase_childController implements Initializable {
 
-	@FXML
-	TableView<Table> tableID;
+	@FXML TableView<Table> tableID;
 	
-	@FXML
-	TableColumn<Table,Integer > iID;
-	
-	@FXML
-	TableColumn<Table,Integer > iName;
+	@FXML TableColumn<Table,Integer > iID;	
+	@FXML 
+	//	TableColumn<Table,Integer > iName;
+	 TableColumn<Table,String> iName;
 
-	@FXML
-	TableColumn<Table,Integer > iDate;
+	@FXML TableColumn<Table,Integer > iDate;
+	@FXML TableColumn<Table,Integer > iGSTIN;
 	
-	@FXML
-	TableColumn<Table,Integer > iPrice;
-	
-	
+	@FXML TableColumn<Table,Integer > iPrice;
 	
 	public TextField nameInput;
 	
-/*	@FXML
-	TextField dateInput;*/
 	
 	@FXML
 	Button Submit;
 	
 	private int iNumber = 1;
-	
 	public void onAddItem(ActionEvent event ){
-		Table entry  = new Table(iNumber, nameInput.getText());
-		iNumber++;
-		
-		data.add(entry);
-		clearForm();
+	Table entry  = new Table(iNumber, nameInput.getText());
+	iNumber++;
+	
+	data.add(entry);
+	clearForm();
 	}
 	
 	private void clearForm() {
 		// TODO Auto-generated method stub
-		//nameInput.
+		nameInput.clear();
+		System.out.println("clearForm called bbbbbbbbb : "+ nameInput.getText());
 	}
 
 	
@@ -75,14 +69,34 @@ public class TwoPurchase_childController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
-		iID.setCellValueFactory(new PropertyValueFactory<Table,Integer>("rID"));
-		iName.setCellValueFactory(new PropertyValueFactory<Table,Integer>("rName"));
 		
+		iID.setCellValueFactory(new PropertyValueFactory<Table,Integer>("rID"));
+		
+		//iID.se(iID);
+		//iName.setCellValueFactory(new PropertyValueFactory<Table,Integer>("rName"));
+		
+		iName.setCellValueFactory(new PropertyValueFactory<Table,String>("rName"));
 		tableID.setItems(data);
-		/*tableID.setEditable(true);
-		iName.setCellFactory(TextFieldTreeTableCell.forTreeTableColumn());*/
+		tableID.setEditable(true);
+		iName.setCellFactory(TextFieldTableCell.forTableColumn());
+		//iID.setCellFactory(TextFieldTableCell.forTableColumn());
+		System.out.println("initialize called zzzzzzzzzzz");
+		    
 	}
 
+	public void changeFirstNameCellEvent(CellEditEvent editCell)
+	{
+		Table  personSelected = tableID.getSelectionModel().getSelectedItem(); 
+		personSelected.setRName(editCell.getNewValue().toString());
+				
+	}
+	/*public void changeIDCellEvent(CellEditEvent editCell)
+	{
+		Table  personSelected = tableID.getSelectionModel().getSelectedItem(); 
+	//	personSelected.setRID((Integer) editCell.getNewValue());
+		
+				
+	}*/
 	
 
 }
