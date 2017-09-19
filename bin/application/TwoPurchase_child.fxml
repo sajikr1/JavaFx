@@ -1,60 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.shape.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TwoPurchase_childController">
    <children>
-      <ScrollPane prefHeight="400.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <content>
-            <TableView>
-              <columns>
-                <TableColumn prefWidth="75.0" text="GSTIN/UIN" />
-                  <TableColumn prefWidth="167.0" text="Type of note(Debit/Credit)" />
-                  <TableColumn prefWidth="373.0" text="Debit Note/credit note">
-                     <columns>
-                        <TableColumn prefWidth="40.0" text="No" />
-                        <TableColumn prefWidth="114.0" text="Date" />
-                     </columns>
-                  </TableColumn>
-                <TableColumn prefWidth="180.0" text="Original Invoice">
-                     <columns>
-                        <TableColumn prefWidth="38.0" text="No" />
-                        <TableColumn prefWidth="63.0" text="Date" />
-                        <TableColumn prefWidth="105.0" text="HSN/SAC*" />
-                        <TableColumn prefWidth="96.0" text="Goods/Service" />
-                     </columns>
-                  </TableColumn>
-                  <TableColumn prefWidth="206.0" text="Differential Value (Plus or Minus)" />
-                  <TableColumn prefWidth="319.0" text="Differential Tax">
-                     <columns>
-                        <TableColumn prefWidth="180.0" text="IGST">
-                           <columns>
-                              <TableColumn prefWidth="75.0" text="Rate" />
-                              <TableColumn prefWidth="75.0" text="Amt" />
-                           </columns>
-                        </TableColumn>
-                        <TableColumn prefWidth="180.0" text="CGST">
-                           <columns>
-                              <TableColumn prefWidth="75.0" text="Rate" />
-                              <TableColumn prefWidth="75.0" text="Amt" />
-                           </columns>
-                        </TableColumn>
-                        <TableColumn prefWidth="180.0" text="SGST">
-                           <columns>
-                              <TableColumn prefWidth="75.0" text="Rate" />
-                              <TableColumn prefWidth="75.0" text="Amt" />
-                           </columns>
-                        </TableColumn>
-                     </columns>
-                  </TableColumn>
-                  <TableColumn prefWidth="75.0" text="Reverse(Y/N)" />
-              </columns>
-            </TableView>
-         </content>
-      </ScrollPane>
+      <SplitPane dividerPositions="0.7638190954773869" layoutY="221.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <ScrollPane prefHeight="301.0" prefViewportHeight="400.0" prefViewportWidth="1456.0" prefWidth="498.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <content>
+                        <TableView fx:id="tableID" tableMenuButtonVisible="true">
+                          <columns>
+                            <TableColumn fx:id="Sno_Id" prefWidth="51.0" resizable="false" text="Sno" />
+                              <TableColumn fx:id="iGSTIN_UIN_Id" prefWidth="75.0" text="GSTIN/UIN" />
+                              <TableColumn fx:id="iName" onEditCommit="#changeFirstNameCellEvent" prefWidth="157.0" resizable="false" text="Type of note(Debit/Credit)" />
+                              <TableColumn prefWidth="147.0" text="Debit Note/credit note">
+                                 <columns>
+                                    <TableColumn prefWidth="40.0" text="No" />
+                                    <TableColumn prefWidth="114.0" text="Date" />
+                                 </columns>
+                              </TableColumn>
+                            <TableColumn prefWidth="180.0" text="Original Invoice">
+                                 <columns>
+                                    <TableColumn prefWidth="40.0" text="No" />
+                                    <TableColumn prefWidth="114.0" text="Date" />
+                                    <TableColumn prefWidth="114.0" text="HSN/SAC*" />
+                                    <TableColumn prefWidth="114.0" text="Goods/Service" />
+                                 </columns>
+                              </TableColumn>
+                              <TableColumn prefWidth="206.0" text="Differential Value (Plus or Minus)" />
+                              <TableColumn prefWidth="319.0" text="Differential Tax">
+                                 <columns>
+                                    <TableColumn prefWidth="180.0" text="IGST">
+                                       <columns>
+                                          <TableColumn prefWidth="75.0" text="Rate" />
+                                          <TableColumn prefWidth="75.0" text="Amt" />
+                                       </columns>
+                                    </TableColumn>
+                                    <TableColumn prefWidth="180.0" text="CGST">
+                                       <columns>
+                                          <TableColumn prefWidth="75.0" text="Rate" />
+                                          <TableColumn prefWidth="75.0" text="Amt" />
+                                       </columns>
+                                    </TableColumn>
+                                    <TableColumn prefWidth="180.0" text="SGST">
+                                       <columns>
+                                          <TableColumn prefWidth="75.0" text="Rate" />
+                                          <TableColumn prefWidth="75.0" text="Amt" />
+                                       </columns>
+                                    </TableColumn>
+                                 </columns>
+                              </TableColumn>
+                              <TableColumn minWidth="100.0" prefWidth="20.0" text="Reverse(Y/N)" />
+                          </columns>
+                        </TableView>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <HBox layoutX="51.0" layoutY="21.0">
+                     <children>
+                        <TextField fx:id="gstinuinInput" layoutX="57.0" layoutY="21.0" prefHeight="25.0" prefWidth="75.0" promptText="GSTIN/UIN" />
+                        <TextField fx:id="nameInput" layoutX="132.0" layoutY="21.0" prefHeight="25.0" prefWidth="157.0" promptText="Type of note(Debit/Credit)" />
+                        <TextField layoutX="289.0" layoutY="21.0" prefWidth="40.0" promptText="No" />
+                        <TextField layoutX="329.0" layoutY="21.0" prefWidth="114.0" promptText="Date" />
+                        <TextField layoutX="443.0" layoutY="21.0" prefWidth="40.0" promptText="No" />
+                        <TextField layoutX="483.0" layoutY="21.0" prefWidth="114.0" promptText="Date" />
+                        <TextField layoutX="597.0" layoutY="21.0" prefWidth="114.0" promptText="HSN/SAC*" />
+                        <TextField layoutX="711.0" layoutY="21.0" prefWidth="114.0" promptText="Goods/Service" />
+                        <TextField layoutX="825.0" layoutY="21.0" prefWidth="206.0" promptText="Differential Value (Plus or Minus)" />
+                        <TextField layoutX="1031.0" layoutY="21.0" prefWidth="75.0" promptText="Rate" />
+                        <TextField layoutX="1106.0" layoutY="21.0" prefWidth="75.0" promptText="Amt" />
+                        <TextField layoutX="1181.0" layoutY="21.0" prefWidth="75.0" promptText="Rate" />
+                        <TextField layoutX="1256.0" layoutY="21.0" prefWidth="75.0" promptText="Amt" />
+                        <TextField layoutX="1331.0" layoutY="21.0" prefWidth="75.0" promptText="Rate" />
+                        <TextField layoutX="1406.0" layoutY="21.0" prefWidth="75.0" promptText="Amt" />
+                        <TextField layoutX="1481.0" layoutY="21.0" prefWidth="20.0" promptText="Reverse(Y/N)" />
+                        <Button fx:id="Submit" mnemonicParsing="false" onAction="#onAddItem" text="Save" />
+                        <ScrollBar>
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                        </ScrollBar>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="75.0" />
+               </padding>
+            </AnchorPane>
+        </items>
+      </SplitPane>
    </children>
 </AnchorPane>

@@ -29,25 +29,25 @@ public class TwoPurchase_childController implements Initializable {
 
 	@FXML TableView<Table> tableID;
 	
-	@FXML TableColumn<Table,Integer > iID;	
+	@FXML TableColumn<Table,Integer > Sno_Id;//iID;	
 	@FXML 
 	//	TableColumn<Table,Integer > iName;
 	 TableColumn<Table,String> iName;
 
-	@FXML TableColumn<Table,Integer > iDate;
-	@FXML TableColumn<Table,Integer > iGSTIN;
+	//@FXML TableColumn<Table,Integer > iDate;
+	@FXML TableColumn<Table,String > iGSTIN_UIN_Id;
 	
-	@FXML TableColumn<Table,Integer > iPrice;
+	//@FXML TableColumn<Table,Integer > iPrice;
 	
 	public TextField nameInput;
-	
+	public TextField gstinuinInput; 
 	
 	@FXML
 	Button Submit;
 	
 	private int iNumber = 1;
 	public void onAddItem(ActionEvent event ){
-	Table entry  = new Table(iNumber, nameInput.getText());
+	Table entry  = new Table(iNumber,gstinuinInput.getText(), nameInput.getText());
 	iNumber++;
 	
 	data.add(entry);
@@ -56,29 +56,36 @@ public class TwoPurchase_childController implements Initializable {
 	
 	private void clearForm() {
 		// TODO Auto-generated method stub
-		nameInput.clear();
+		//nameInput.clear();
 		System.out.println("clearForm called bbbbbbbbb : "+ nameInput.getText());
 	}
 
 	
 	
 	final ObservableList<Table> data = FXCollections.observableArrayList(
-			new Table(iNumber ++, "Name_1"));//, "09/01/2017")
+			new Table(iNumber ++, "rGstinuin","Name_1"));//, "09/01/2017")
 			
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 		
-		iID.setCellValueFactory(new PropertyValueFactory<Table,Integer>("rID"));
+		//iID.setCellValueFactory(new PropertyValueFactory<Table,Integer>("rID"));
+		Sno_Id.setCellValueFactory(new PropertyValueFactory<Table,Integer>("rID"));
 		
 		//iID.se(iID);
 		//iName.setCellValueFactory(new PropertyValueFactory<Table,Integer>("rName"));
+		iGSTIN_UIN_Id.setCellValueFactory(new PropertyValueFactory<Table,String>("rGstinuin"));
 		
 		iName.setCellValueFactory(new PropertyValueFactory<Table,String>("rName"));
+		
 		tableID.setItems(data);
 		tableID.setEditable(true);
+		
+		iGSTIN_UIN_Id.setCellFactory(TextFieldTableCell.forTableColumn());
+		
 		iName.setCellFactory(TextFieldTableCell.forTableColumn());
+		
 		//iID.setCellFactory(TextFieldTableCell.forTableColumn());
 		System.out.println("initialize called zzzzzzzzzzz");
 		    
