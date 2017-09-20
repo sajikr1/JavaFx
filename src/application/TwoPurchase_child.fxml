@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.shape.*?>
@@ -11,124 +13,136 @@
    <children>
       <SplitPane dividerPositions="0.7638190954773869" layoutY="221.0" prefHeight="400.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
-          <AnchorPane maxWidth="400.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0">
-               <children>
-                  <VBox spacing="20.0">
+            <ScrollPane maxWidth="400.0" prefViewportHeight="526.0" prefViewportWidth="400.0" prefWidth="400.0">
+               <content>
+                <AnchorPane maxWidth="400.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0">
                      <children>
-                        <VBox layoutX="51.0" layoutY="21.0" spacing="15.0">
+                        <Label text="2-Purchase" textFill="#9c3636" underline="true">
+                           <font>
+                              <Font size="31.0" />
+                           </font>
+                           <padding>
+                              <Insets left="111.0" top="15.0" />
+                           </padding>
+                        </Label>
+                        <VBox spacing="20.0">
                            <children>
-                              <VBox spacing="5.0">
+                              <VBox layoutX="51.0" layoutY="21.0" spacing="15.0">
                                  <children>
-                                    <HBox>
+                                    <VBox spacing="5.0">
                                        <children>
-                                          <TextField fx:id="gstinuinInput" layoutX="57.0" layoutY="21.0" prefHeight="25.0" prefWidth="75.0" promptText="GSTIN/UIN" />
-                                          <TextField fx:id="TypeNoteInput" layoutX="132.0" layoutY="21.0" prefHeight="25.0" prefWidth="117.0" promptText="Type of note(Debit/Credit)">
-                                             <HBox.margin>
+                                          <HBox>
+                                             <children>
+                                                <TextField fx:id="gstinuinInput" layoutX="57.0" layoutY="21.0" prefHeight="25.0" prefWidth="75.0" promptText="GSTIN/UIN" />
+                                                <TextField fx:id="TypeNoteInput" layoutX="132.0" layoutY="21.0" prefHeight="25.0" prefWidth="117.0" promptText="Type of note(Debit/Credit)">
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </TextField>
+                                                <TextField fx:id="CreditDebitNoInput" layoutX="289.0" layoutY="21.0" prefHeight="25.0" prefWidth="88.0" promptText="No" />
+                                                <TextField fx:id="CreditDebitDateInput" layoutX="329.0" layoutY="21.0" prefHeight="25.0" prefWidth="106.0" promptText="Date" />
+                                             </children>
+                                          </HBox>
+                                          <Label layoutY="5.0" text="GSTIN/UIN &amp; Debit/Credit Info">
+                                             <VBox.margin>
                                                 <Insets />
-                                             </HBox.margin>
-                                          </TextField>
-                                          <TextField fx:id="CreditDebitNoInput" layoutX="289.0" layoutY="21.0" prefHeight="25.0" prefWidth="88.0" promptText="No" />
-                                          <TextField fx:id="CreditDebitDateInput" layoutX="329.0" layoutY="21.0" prefHeight="25.0" prefWidth="106.0" promptText="Date" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Separator prefWidth="200.0" />
                                        </children>
-                                    </HBox>
-                                    <Label layoutY="5.0" text="GSTIN/UIN &amp; Debit/Credit Info">
-                                       <VBox.margin>
-                                          <Insets />
-                                       </VBox.margin>
-                                    </Label>
-                                    <Separator prefWidth="200.0" />
+                                    </VBox>
+                                    <VBox spacing="5.0">
+                                       <children>
+                                          <HBox>
+                                             <children>
+                                                <TextField fx:id="OriginalInvoice_NoInput" layoutX="443.0" layoutY="21.0" prefHeight="25.0" prefWidth="76.0" promptText="No" />
+                                                <TextField fx:id="OriginalInvoice_HSNInput" layoutX="597.0" layoutY="21.0" prefWidth="114.0" promptText="Date" />
+                                                <TextField fx:id="OriginalInvoice_DateInput" layoutX="10.0" layoutY="10.0" prefWidth="90.0" promptText="HSN/SAC*" />
+                                                <TextField fx:id="OriginalInvoice_GoodsInput" layoutX="711.0" layoutY="21.0" prefHeight="25.0" prefWidth="104.0" promptText="Goods/Service" />
+                                             </children>
+                                          </HBox>
+                                          <Label text="Original Invoice" />
+                                          <Separator prefWidth="200.0" />
+                                       </children>
+                                    </VBox>
+                                    <VBox spacing="5.0">
+                                       <children>
+                                          <TextField fx:id="Differential_ValueInput" layoutX="825.0" layoutY="21.0" prefHeight="25.0" prefWidth="351.0" promptText="Differential Value (Plus or Minus)" />
+                                          <Label text="Differential Value (Plus or Minus)" />
+                                          <Separator prefWidth="200.0" />
+                                       </children>
+                                    </VBox>
+                                    <VBox spacing="5.0">
+                                       <children>
+                                          <HBox>
+                                             <children>
+                                                <TextField fx:id="IGST_RateInput" layoutX="1181.0" layoutY="21.0" prefWidth="75.0" promptText="Rate" />
+                                                <TextField fx:id="IGST_AmountInput" layoutX="1256.0" layoutY="21.0" prefWidth="75.0" promptText="Amt" />
+                                             </children>
+                                          </HBox>
+                                          <Label text="Differential Tax- IGST" />
+                                          <Separator prefWidth="200.0" />
+                                       </children>
+                                    </VBox>
+                                    <VBox>
+                                       <children>
+                                          <HBox>
+                                             <children>
+                                                <TextField fx:id="CGST_RateInput" layoutX="1331.0" layoutY="21.0" prefWidth="75.0" promptText="Rate" />
+                                                <TextField fx:id="CGST_AmountInput" layoutX="1406.0" layoutY="21.0" prefWidth="75.0" promptText="Amt" />
+                                             </children>
+                                          </HBox>
+                                          <Label text="Differential Tax-CGST" />
+                                          <Separator prefWidth="200.0" />
+                                       </children>
+                                    </VBox>
+                                    <VBox>
+                                       <children>
+                                          <HBox>
+                                             <children>
+                                                <TextField fx:id="SGST_RateInput" layoutX="1031.0" layoutY="21.0" prefWidth="75.0" promptText="Rate" />
+                                                <TextField fx:id="SGST_AmountInput" layoutX="1106.0" layoutY="21.0" prefWidth="75.0" promptText="Amt" />
+                                             </children>
+                                          </HBox>
+                                          <Label text="Differential Tax-SGST" />
+                                          <Separator prefWidth="200.0" />
+                                       </children>
+                                    </VBox>
+                                    <VBox spacing="5.0">
+                                       <children>
+                                          <TextField fx:id="ReverseInput" layoutX="1481.0" layoutY="21.0" prefWidth="20.0" promptText="Reverse(Y/N)" />
+                                          <Label text="Reverse(Y/N)" />
+                                       </children>
+                                    </VBox>
                                  </children>
+                                 <opaqueInsets>
+                                    <Insets bottom="100.0" />
+                                 </opaqueInsets>
                               </VBox>
                               <VBox spacing="5.0">
                                  <children>
-                                    <HBox>
+                                    <Separator prefWidth="200.0" />
+                                    <HBox spacing="60.0">
                                        <children>
-                                          <TextField fx:id="OriginalInvoice_NoInput" layoutX="443.0" layoutY="21.0" prefHeight="25.0" prefWidth="76.0" promptText="No" />
-                                          <TextField fx:id="OriginalInvoice_HSNInput" layoutX="597.0" layoutY="21.0" prefWidth="114.0" promptText="Date" />
-                                          <TextField fx:id="OriginalInvoice_DateInput" layoutX="10.0" layoutY="10.0" prefWidth="90.0" promptText="HSN/SAC*" />
-                                          <TextField fx:id="OriginalInvoice_GoodsInput" layoutX="711.0" layoutY="21.0" prefHeight="25.0" prefWidth="104.0" promptText="Goods/Service" />
+                                          <Button fx:id="Submit" mnemonicParsing="false" onAction="#onAddItem" text="Save" />
+                                          <Button mnemonicParsing="false" text="Cancel" />
+                                          <Button mnemonicParsing="false" text="Reset" />
                                        </children>
                                     </HBox>
-                                    <Label text="Original Invoice" />
-                                    <Separator prefWidth="200.0" />
-                                 </children>
-                              </VBox>
-                              <VBox spacing="5.0">
-                                 <children>
-                                    <TextField fx:id="Differential_ValueInput" layoutX="825.0" layoutY="21.0" prefHeight="25.0" prefWidth="351.0" promptText="Differential Value (Plus or Minus)" />
-                                    <Label text="Differential Value (Plus or Minus)" />
-                                    <Separator prefWidth="200.0" />
-                                 </children>
-                              </VBox>
-                              <VBox spacing="5.0">
-                                 <children>
-                                    <HBox>
-                                       <children>
-                                          <TextField fx:id="IGST_RateInput" layoutX="1181.0" layoutY="21.0" prefWidth="75.0" promptText="Rate" />
-                                          <TextField fx:id="IGST_AmountInput" layoutX="1256.0" layoutY="21.0" prefWidth="75.0" promptText="Amt" />
-                                       </children>
-                                    </HBox>
-                                    <Label text="Differential Tax- IGST" />
-                                    <Separator prefWidth="200.0" />
-                                 </children>
-                              </VBox>
-                              <VBox>
-                                 <children>
-                                    <HBox>
-                                       <children>
-                                          <TextField fx:id="CGST_RateInput" layoutX="1331.0" layoutY="21.0" prefWidth="75.0" promptText="Rate" />
-                                          <TextField fx:id="CGST_AmountInput" layoutX="1406.0" layoutY="21.0" prefWidth="75.0" promptText="Amt" />
-                                       </children>
-                                    </HBox>
-                                    <Label text="Differential Tax-CGST" />
-                                    <Separator prefWidth="200.0" />
-                                 </children>
-                              </VBox>
-                              <VBox>
-                                 <children>
-                                    <HBox>
-                                       <children>
-                                          <TextField fx:id="SGST_RateInput" layoutX="1031.0" layoutY="21.0" prefWidth="75.0" promptText="Rate" />
-                                          <TextField fx:id="SGST_AmountInput" layoutX="1106.0" layoutY="21.0" prefWidth="75.0" promptText="Amt" />
-                                       </children>
-                                    </HBox>
-                                    <Label text="Differential Tax-SGST" />
-                                    <Separator prefWidth="200.0" />
-                                 </children>
-                              </VBox>
-                              <VBox spacing="5.0">
-                                 <children>
-                                    <TextField fx:id="ReverseInput" layoutX="1481.0" layoutY="21.0" prefWidth="20.0" promptText="Reverse(Y/N)" />
-                                    <Label text="Reverse(Y/N)" />
                                  </children>
                               </VBox>
                            </children>
-                           <opaqueInsets>
-                              <Insets bottom="100.0" />
-                           </opaqueInsets>
-                        </VBox>
-                        <VBox spacing="5.0">
-                           <children>
-                              <Separator prefWidth="200.0" />
-                              <HBox spacing="60.0">
-                                 <children>
-                                    <Button fx:id="Submit" mnemonicParsing="false" onAction="#onAddItem" text="Save" />
-                                    <Button mnemonicParsing="false" text="Cancel" />
-                                    <Button mnemonicParsing="false" text="Reset" />
-                                 </children>
-                              </HBox>
-                           </children>
+                           <padding>
+                              <Insets left="10.0" top="75.0" />
+                           </padding>
                         </VBox>
                      </children>
                      <padding>
-                        <Insets left="10.0" top="25.0" />
+                        <Insets left="75.0" top="10.0" />
                      </padding>
-                  </VBox>
-               </children>
-               <padding>
-                  <Insets left="75.0" />
-               </padding>
-            </AnchorPane>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
                   <ScrollPane prefHeight="301.0" prefViewportHeight="400.0" prefViewportWidth="1456.0" prefWidth="498.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
