@@ -11,7 +11,7 @@
    <children>
       <SplitPane dividerPositions="0.7638190954773869" layoutY="221.0" prefHeight="400.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+          <AnchorPane maxWidth="400.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0">
                <children>
                   <VBox spacing="20.0">
                      <children>
@@ -22,13 +22,13 @@
                                     <HBox>
                                        <children>
                                           <TextField fx:id="gstinuinInput" layoutX="57.0" layoutY="21.0" prefHeight="25.0" prefWidth="75.0" promptText="GSTIN/UIN" />
-                                          <TextField fx:id="nameInput" layoutX="132.0" layoutY="21.0" prefHeight="25.0" prefWidth="157.0" promptText="Type of note(Debit/Credit)">
+                                          <TextField fx:id="TypeNoteInput" layoutX="132.0" layoutY="21.0" prefHeight="25.0" prefWidth="117.0" promptText="Type of note(Debit/Credit)">
                                              <HBox.margin>
                                                 <Insets />
                                              </HBox.margin>
                                           </TextField>
-                                          <TextField layoutX="289.0" layoutY="21.0" prefWidth="40.0" promptText="No" />
-                                          <TextField layoutX="329.0" layoutY="21.0" prefWidth="114.0" promptText="Date" />
+                                          <TextField fx:id="CreditDebitNoInput" layoutX="289.0" layoutY="21.0" prefHeight="25.0" prefWidth="88.0" promptText="No" />
+                                          <TextField fx:id="CreditDebitDateInput" layoutX="329.0" layoutY="21.0" prefHeight="25.0" prefWidth="106.0" promptText="Date" />
                                        </children>
                                     </HBox>
                                     <Label layoutY="5.0" text="GSTIN/UIN &amp; Debit/Credit Info">
@@ -43,10 +43,10 @@
                                  <children>
                                     <HBox>
                                        <children>
-                                          <TextField layoutX="443.0" layoutY="21.0" prefWidth="40.0" promptText="No" />
-                                          <TextField layoutX="483.0" layoutY="21.0" prefWidth="114.0" promptText="Date" />
-                                          <TextField layoutX="597.0" layoutY="21.0" prefWidth="114.0" promptText="HSN/SAC*" />
-                                          <TextField layoutX="711.0" layoutY="21.0" prefWidth="114.0" promptText="Goods/Service" />
+                                          <TextField fx:id="OriginalInvoice_NoInput" layoutX="443.0" layoutY="21.0" prefHeight="25.0" prefWidth="76.0" promptText="No" />
+                                          <TextField fx:id="OriginalInvoice_HSNInput" layoutX="597.0" layoutY="21.0" prefWidth="114.0" promptText="Date" />
+                                          <TextField fx:id="OriginalInvoice_DateInput" layoutX="10.0" layoutY="10.0" prefWidth="90.0" promptText="HSN/SAC*" />
+                                          <TextField fx:id="OriginalInvoice_GoodsInput" layoutX="711.0" layoutY="21.0" prefHeight="25.0" prefWidth="104.0" promptText="Goods/Service" />
                                        </children>
                                     </HBox>
                                     <Label text="Original Invoice" />
@@ -55,7 +55,7 @@
                               </VBox>
                               <VBox spacing="5.0">
                                  <children>
-                                    <TextField layoutX="825.0" layoutY="21.0" prefWidth="206.0" promptText="Differential Value (Plus or Minus)" />
+                                    <TextField fx:id="Differential_ValueInput" layoutX="825.0" layoutY="21.0" prefHeight="25.0" prefWidth="351.0" promptText="Differential Value (Plus or Minus)" />
                                     <Label text="Differential Value (Plus or Minus)" />
                                     <Separator prefWidth="200.0" />
                                  </children>
@@ -64,8 +64,8 @@
                                  <children>
                                     <HBox>
                                        <children>
-                                          <TextField layoutX="1181.0" layoutY="21.0" prefWidth="75.0" promptText="Rate" />
-                                          <TextField layoutX="1256.0" layoutY="21.0" prefWidth="75.0" promptText="Amt" />
+                                          <TextField fx:id="IGST_RateInput" layoutX="1181.0" layoutY="21.0" prefWidth="75.0" promptText="Rate" />
+                                          <TextField fx:id="IGST_AmountInput" layoutX="1256.0" layoutY="21.0" prefWidth="75.0" promptText="Amt" />
                                        </children>
                                     </HBox>
                                     <Label text="Differential Tax- IGST" />
@@ -76,8 +76,8 @@
                                  <children>
                                     <HBox>
                                        <children>
-                                          <TextField layoutX="1331.0" layoutY="21.0" prefWidth="75.0" promptText="Rate" />
-                                          <TextField layoutX="1406.0" layoutY="21.0" prefWidth="75.0" promptText="Amt" />
+                                          <TextField fx:id="CGST_RateInput" layoutX="1331.0" layoutY="21.0" prefWidth="75.0" promptText="Rate" />
+                                          <TextField fx:id="CGST_AmountInput" layoutX="1406.0" layoutY="21.0" prefWidth="75.0" promptText="Amt" />
                                        </children>
                                     </HBox>
                                     <Label text="Differential Tax-CGST" />
@@ -88,8 +88,8 @@
                                  <children>
                                     <HBox>
                                        <children>
-                                          <TextField layoutX="1031.0" layoutY="21.0" prefWidth="75.0" promptText="Rate" />
-                                          <TextField layoutX="1106.0" layoutY="21.0" prefWidth="75.0" promptText="Amt" />
+                                          <TextField fx:id="SGST_RateInput" layoutX="1031.0" layoutY="21.0" prefWidth="75.0" promptText="Rate" />
+                                          <TextField fx:id="SGST_AmountInput" layoutX="1106.0" layoutY="21.0" prefWidth="75.0" promptText="Amt" />
                                        </children>
                                     </HBox>
                                     <Label text="Differential Tax-SGST" />
@@ -98,7 +98,7 @@
                               </VBox>
                               <VBox spacing="5.0">
                                  <children>
-                                    <TextField layoutX="1481.0" layoutY="21.0" prefWidth="20.0" promptText="Reverse(Y/N)" />
+                                    <TextField fx:id="ReverseInput" layoutX="1481.0" layoutY="21.0" prefWidth="20.0" promptText="Reverse(Y/N)" />
                                     <Label text="Reverse(Y/N)" />
                                  </children>
                               </VBox>
@@ -137,45 +137,45 @@
                           <columns>
                             <TableColumn fx:id="Sno_Id" prefWidth="51.0" resizable="false" text="Sno" />
                               <TableColumn fx:id="iGSTIN_UIN_Id" prefWidth="75.0" text="GSTIN/UIN" />
-                              <TableColumn fx:id="iName" onEditCommit="#changeFirstNameCellEvent" prefWidth="157.0" resizable="false" text="Type of note(Debit/Credit)" />
+                              <TableColumn fx:id="iTypeNote" onEditCommit="#changeFirstNameCellEvent" prefWidth="157.0" resizable="false" text="Type of note(Debit/Credit)" />
                               <TableColumn prefWidth="147.0" text="Debit Note/credit note">
                                  <columns>
-                                    <TableColumn prefWidth="40.0" text="No" />
-                                    <TableColumn prefWidth="114.0" text="Date" />
+                                    <TableColumn fx:id="iCreditDebitNo" prefWidth="40.0" text="No" />
+                                    <TableColumn fx:id="iCreditDebitDate" prefWidth="114.0" text="Date" />
                                  </columns>
                               </TableColumn>
                             <TableColumn prefWidth="180.0" text="Original Invoice">
                                  <columns>
-                                    <TableColumn prefWidth="40.0" text="No" />
-                                    <TableColumn prefWidth="114.0" text="Date" />
-                                    <TableColumn prefWidth="114.0" text="HSN/SAC*" />
-                                    <TableColumn prefWidth="114.0" text="Goods/Service" />
+                                    <TableColumn fx:id="iOriginalInvoice_No" prefWidth="40.0" text="No" />
+                                    <TableColumn fx:id="iOriginalInvoice_Date" prefWidth="114.0" text="Date" />
+                                    <TableColumn fx:id="iOriginalInvoice_HSN" prefWidth="114.0" text="HSN/SAC*" />
+                                    <TableColumn fx:id="iOriginalInvoice_Goods" prefWidth="114.0" text="Goods/Service" />
                                  </columns>
                               </TableColumn>
-                              <TableColumn prefWidth="206.0" text="Differential Value (Plus or Minus)" />
+                              <TableColumn fx:id="iDifferential_Value" prefWidth="206.0" text="Differential Value (Plus or Minus)" />
                               <TableColumn prefWidth="319.0" text="Differential Tax">
                                  <columns>
                                     <TableColumn prefWidth="180.0" text="IGST">
                                        <columns>
-                                          <TableColumn prefWidth="75.0" text="Rate" />
-                                          <TableColumn prefWidth="75.0" text="Amt" />
+                                          <TableColumn fx:id="iIgst_Rate" prefWidth="75.0" text="Rate" />
+                                          <TableColumn fx:id="iIgst_Amount" prefWidth="75.0" text="Amt" />
                                        </columns>
                                     </TableColumn>
                                     <TableColumn prefWidth="180.0" text="CGST">
                                        <columns>
-                                          <TableColumn prefWidth="75.0" text="Rate" />
-                                          <TableColumn prefWidth="75.0" text="Amt" />
+                                          <TableColumn fx:id="iCgst_Rate" prefWidth="75.0" text="Rate" />
+                                          <TableColumn fx:id="iCgst_Amount" prefWidth="75.0" text="Amt" />
                                        </columns>
                                     </TableColumn>
                                     <TableColumn prefWidth="180.0" text="SGST">
                                        <columns>
-                                          <TableColumn prefWidth="75.0" text="Rate" />
-                                          <TableColumn prefWidth="75.0" text="Amt" />
+                                          <TableColumn fx:id="iSgst_Rate" prefWidth="75.0" text="Rate" />
+                                          <TableColumn fx:id="iSgst_Amount" prefWidth="75.0" text="Amt" />
                                        </columns>
                                     </TableColumn>
                                  </columns>
                               </TableColumn>
-                              <TableColumn minWidth="100.0" prefWidth="20.0" text="Reverse(Y/N)" />
+                              <TableColumn fx:id="iReverse" minWidth="100.0" prefWidth="20.0" text="Reverse(Y/N)" />
                           </columns>
                         </TableView>
                      </content>
