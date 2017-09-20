@@ -28,7 +28,7 @@ import javafx.scene.control.cell.TextFieldTreeTableCell;
 public class TwoPurchase_childController implements Initializable {
 
 	@FXML TableView<Table> tableID;
-	@FXML TableColumn<Table,Integer > Sno_Id;//iID;	
+	@FXML TableColumn<Table,Integer > Sno_Id;	
 	@FXML TableColumn<Table,String> iTypeNote;
 	@FXML TableColumn<Table,String> iCreditDebitNo;
 	@FXML TableColumn<Table,String> iCreditDebitDate;
@@ -102,7 +102,6 @@ public class TwoPurchase_childController implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 		
-		//iID.setCellValueFactory(new PropertyValueFactory<Table,Integer>("rID"));
 		Sno_Id.setCellValueFactory(new PropertyValueFactory<Table,Integer>("rID"));
 		iGSTIN_UIN_Id.setCellValueFactory(new PropertyValueFactory<Table,String>("rGstinuin"));
 		iTypeNote.setCellValueFactory(new PropertyValueFactory<Table,String>("rTypenote"));
@@ -125,24 +124,105 @@ public class TwoPurchase_childController implements Initializable {
 		tableID.setEditable(true);
 		
 		iGSTIN_UIN_Id.setCellFactory(TextFieldTableCell.forTableColumn());
-		System.out.println("initialize called zzzzzzzzzzz");
+		iTypeNote.setCellFactory(TextFieldTableCell.forTableColumn());
+		iCreditDebitNo.setCellFactory(TextFieldTableCell.forTableColumn());
+		iCreditDebitDate.setCellFactory(TextFieldTableCell.forTableColumn());
+		iOriginalInvoice_No.setCellFactory(TextFieldTableCell.forTableColumn());
+		iOriginalInvoice_Date.setCellFactory(TextFieldTableCell.forTableColumn());
+		iOriginalInvoice_HSN.setCellFactory(TextFieldTableCell.forTableColumn());
+		iOriginalInvoice_Goods.setCellFactory(TextFieldTableCell.forTableColumn());
+		iDifferential_Value.setCellFactory(TextFieldTableCell.forTableColumn());
+		iIgst_Rate.setCellFactory(TextFieldTableCell.forTableColumn());
+		iIgst_Amount.setCellFactory(TextFieldTableCell.forTableColumn());
+		iCgst_Rate.setCellFactory(TextFieldTableCell.forTableColumn());
+		iCgst_Amount.setCellFactory(TextFieldTableCell.forTableColumn());
+		iSgst_Rate.setCellFactory(TextFieldTableCell.forTableColumn());
+		iSgst_Amount.setCellFactory(TextFieldTableCell.forTableColumn());
+		iReverse.setCellFactory(TextFieldTableCell.forTableColumn());
+		iGSTIN_UIN_Id.setCellFactory(TextFieldTableCell.forTableColumn());
 		    
 	}
 
-	public void changeFirstNameCellEvent(CellEditEvent editCell)
+	public void updateGstinuin(CellEditEvent editCell)
 	{
-		Table  personSelected = tableID.getSelectionModel().getSelectedItem(); 
-	//	personSelected.setRName(editCell.getNewValue().toString());
-		personSelected.setRGstinuin(editCell.getNewValue().toString());
-				
+		Table  personSelected = tableID.getSelectionModel().getSelectedItem();	
+		personSelected.setRGstinuin(editCell.getNewValue().toString());				
 	}
-	/*public void changeIDCellEvent(CellEditEvent editCell)
+	public void updateTypenote(CellEditEvent editCell)
 	{
 		Table  personSelected = tableID.getSelectionModel().getSelectedItem(); 
-	//	personSelected.setRID((Integer) editCell.getNewValue());
-		
-				
-	}*/
+		personSelected.setRTypenote(editCell.getNewValue().toString());	
+	}
+	public void updateCreditdebitno(CellEditEvent editCell)
+	{
+		Table  personSelected = tableID.getSelectionModel().getSelectedItem(); 
+		personSelected.setRCreditdebitno(editCell.getNewValue().toString());	
+	}
+	public void updateCreditdebitdate(CellEditEvent editCell)
+	{
+		Table  personSelected = tableID.getSelectionModel().getSelectedItem(); 
+		personSelected.setRCreditdebitdate(editCell.getNewValue().toString());	
+	}
+	public void updateOriginalinvoiceno(CellEditEvent editCell)
+	{
+		Table  personSelected = tableID.getSelectionModel().getSelectedItem(); 
+		personSelected.setROriginalinvoiceno(editCell.getNewValue().toString());	
+	}
+	public void updateOriginalinvoicedate(CellEditEvent editCell)
+	{
+		Table  personSelected = tableID.getSelectionModel().getSelectedItem(); 
+		personSelected.setROriginalinvoicedate(editCell.getNewValue().toString());	
+	}
+	public void updateOriginalinvoicehsn(CellEditEvent editCell)
+	{
+		Table  personSelected = tableID.getSelectionModel().getSelectedItem(); 
+		personSelected.setROriginalinvoicehsn(editCell.getNewValue().toString());	
+	}
+	public void updateOriginalinvoicegoods(CellEditEvent editCell)
+	{
+		Table  personSelected = tableID.getSelectionModel().getSelectedItem(); 
+		personSelected.setROriginalinvoicegoods(editCell.getNewValue().toString());	
+	}
+	public void updateDifferentialvalue(CellEditEvent editCell)
+	{
+		Table  personSelected = tableID.getSelectionModel().getSelectedItem(); 
+		personSelected.setRDifferentialvalue(editCell.getNewValue().toString());	
+	}
+	public void updateIgstrate(CellEditEvent editCell)
+	{
+		Table  personSelected = tableID.getSelectionModel().getSelectedItem(); 
+		personSelected.setRIgstrate(editCell.getNewValue().toString());	
+	}
+	public void updateIgstamount(CellEditEvent editCell)
+	{
+		Table  personSelected = tableID.getSelectionModel().getSelectedItem(); 
+		personSelected.setRIgstamount(editCell.getNewValue().toString());	
+	}
+	public void updateCgstrate(CellEditEvent editCell)
+	{
+		Table  personSelected = tableID.getSelectionModel().getSelectedItem(); 
+		personSelected.setRIgstrate(editCell.getNewValue().toString());	
+	}
+	public void updateCgstamount(CellEditEvent editCell)
+	{
+		Table  personSelected = tableID.getSelectionModel().getSelectedItem(); 
+		personSelected.setRCgstamount(editCell.getNewValue().toString());	
+	}
+	public void updateSgstrate(CellEditEvent editCell)
+	{
+		Table  personSelected = tableID.getSelectionModel().getSelectedItem(); 
+		personSelected.setRSgstrate(editCell.getNewValue().toString());	
+	}
+	public void updateSgstamount(CellEditEvent editCell)
+	{
+		Table  personSelected = tableID.getSelectionModel().getSelectedItem(); 
+		personSelected.setRSgstamount(editCell.getNewValue().toString());	
+	}
+	public void updateReverse(CellEditEvent editCell)
+	{
+		Table  personSelected = tableID.getSelectionModel().getSelectedItem(); 
+		personSelected.setRReverse(editCell.getNewValue().toString());	
+	}
 	
 
 }

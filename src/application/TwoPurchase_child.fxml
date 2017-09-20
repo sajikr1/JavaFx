@@ -136,46 +136,46 @@
                         <TableView fx:id="tableID" prefHeight="1000.0" tableMenuButtonVisible="true">
                           <columns>
                             <TableColumn fx:id="Sno_Id" prefWidth="51.0" resizable="false" text="Sno" />
-                              <TableColumn fx:id="iGSTIN_UIN_Id" prefWidth="75.0" text="GSTIN/UIN" />
-                              <TableColumn fx:id="iTypeNote" onEditCommit="#changeFirstNameCellEvent" prefWidth="157.0" resizable="false" text="Type of note(Debit/Credit)" />
+                              <TableColumn fx:id="iGSTIN_UIN_Id" onEditCommit="#updateGstinuin" prefWidth="75.0" text="GSTIN/UIN" />
+                              <TableColumn fx:id="iTypeNote" onEditCommit="#updateTypenote" prefWidth="157.0" resizable="false" text="Type of note(Debit/Credit)" />
                               <TableColumn prefWidth="147.0" text="Debit Note/credit note">
                                  <columns>
-                                    <TableColumn fx:id="iCreditDebitNo" prefWidth="40.0" text="No" />
-                                    <TableColumn fx:id="iCreditDebitDate" prefWidth="114.0" text="Date" />
+                                    <TableColumn fx:id="iCreditDebitNo" onEditCommit="#updateCreditdebitno" prefWidth="40.0" text="No" />
+                                    <TableColumn fx:id="iCreditDebitDate" onEditCommit="#updateCreditdebitdate" prefWidth="114.0" text="Date" />
                                  </columns>
                               </TableColumn>
                             <TableColumn prefWidth="180.0" text="Original Invoice">
                                  <columns>
-                                    <TableColumn fx:id="iOriginalInvoice_No" prefWidth="40.0" text="No" />
-                                    <TableColumn fx:id="iOriginalInvoice_Date" prefWidth="114.0" text="Date" />
-                                    <TableColumn fx:id="iOriginalInvoice_HSN" prefWidth="114.0" text="HSN/SAC*" />
-                                    <TableColumn fx:id="iOriginalInvoice_Goods" prefWidth="114.0" text="Goods/Service" />
+                                    <TableColumn fx:id="iOriginalInvoice_No" onEditCommit="#updateOriginalinvoiceno" prefWidth="40.0" text="No" />
+                                    <TableColumn fx:id="iOriginalInvoice_Date" onEditCommit="#updateOriginalinvoicedate" prefWidth="114.0" text="Date" />
+                                    <TableColumn fx:id="iOriginalInvoice_HSN" onEditCommit="#updateOriginalinvoicehsn" prefWidth="114.0" text="HSN/SAC*" />
+                                    <TableColumn fx:id="iOriginalInvoice_Goods" onEditCommit="#updateOriginalinvoicegoods" prefWidth="114.0" text="Goods/Service" />
                                  </columns>
                               </TableColumn>
-                              <TableColumn fx:id="iDifferential_Value" prefWidth="206.0" text="Differential Value (Plus or Minus)" />
+                              <TableColumn fx:id="iDifferential_Value" onEditCommit="#updateDifferentialvalue" prefWidth="206.0" text="Differential Value (Plus or Minus)" />
                               <TableColumn prefWidth="319.0" text="Differential Tax">
                                  <columns>
                                     <TableColumn prefWidth="180.0" text="IGST">
                                        <columns>
-                                          <TableColumn fx:id="iIgst_Rate" prefWidth="75.0" text="Rate" />
-                                          <TableColumn fx:id="iIgst_Amount" prefWidth="75.0" text="Amt" />
+                                          <TableColumn fx:id="iIgst_Rate" onEditCommit="#updateIgstrate" prefWidth="75.0" text="Rate" />
+                                          <TableColumn fx:id="iIgst_Amount" onEditCommit="#updateIgstamount" prefWidth="75.0" text="Amt" />
                                        </columns>
                                     </TableColumn>
                                     <TableColumn prefWidth="180.0" text="CGST">
                                        <columns>
-                                          <TableColumn fx:id="iCgst_Rate" prefWidth="75.0" text="Rate" />
-                                          <TableColumn fx:id="iCgst_Amount" prefWidth="75.0" text="Amt" />
+                                          <TableColumn fx:id="iCgst_Rate" onEditCommit="#updateCgstrate" prefWidth="75.0" text="Rate" />
+                                          <TableColumn fx:id="iCgst_Amount" onEditCommit="#updateCgstamount" prefWidth="75.0" text="Amt" />
                                        </columns>
                                     </TableColumn>
                                     <TableColumn prefWidth="180.0" text="SGST">
                                        <columns>
-                                          <TableColumn fx:id="iSgst_Rate" prefWidth="75.0" text="Rate" />
-                                          <TableColumn fx:id="iSgst_Amount" prefWidth="75.0" text="Amt" />
+                                          <TableColumn fx:id="iSgst_Rate" onEditCommit="#updateSgstrate" prefWidth="75.0" text="Rate" />
+                                          <TableColumn fx:id="iSgst_Amount" onEditCommit="#updateSgstamount" prefWidth="75.0" text="Amt" />
                                        </columns>
                                     </TableColumn>
                                  </columns>
                               </TableColumn>
-                              <TableColumn fx:id="iReverse" minWidth="100.0" prefWidth="20.0" text="Reverse(Y/N)" />
+                              <TableColumn fx:id="iReverse" minWidth="100.0" onEditCommit="#updateReverse" prefWidth="20.0" text="Reverse(Y/N)" />
                           </columns>
                         </TableView>
                      </content>
