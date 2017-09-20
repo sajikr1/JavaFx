@@ -1,11 +1,6 @@
 package application;
 
-//import java.awt.Button;
-//import java.awt.TextField;
-//import java.awt.event.ActionEvent;
-/*import java.net.URL;
-import java.util.ResourceBundle;
-*/
+
 import model.Table;
 
 import java.net.URL;
@@ -25,9 +20,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.control.cell.TextFieldTreeTableCell;
 
-//// wrong file as its a copy of DNCN 
-
-public class TwoPurchase_childController implements Initializable {
+public class OneDNCN_childController implements Initializable {
 
 	@FXML TableView<Table> tableID;
 	@FXML TableColumn<Table,Integer > Sno_Id;	
